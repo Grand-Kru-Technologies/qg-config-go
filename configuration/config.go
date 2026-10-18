@@ -1,17 +1,17 @@
 /*
-   Copyright 2022 The Queer Global Authors.
+Copyright 2022 The Queer Global Authors.
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 */
 package configuration
 
@@ -26,11 +26,11 @@ import (
 	"time"
 )
 
-//Config is a local instance of some config values
+// Config is a local instance of some config values
 type Config map[string]interface{}
 
-//Init contains the information we need to initialzie a configuration fetcher
-//for a given config type
+// Init contains the information we need to initialzie a configuration fetcher
+// for a given config type
 type InitParams struct {
 	//The type of configuation source we'll be reading from
 	ConfigType string `json:"ConfigType"`
@@ -51,7 +51,7 @@ type InitParams struct {
 	InitValues *map[string]interface{} `json:"InitValues,omitempty"`
 }
 
-//ConfigFetcher is an interface for config-fetching / reading types
+// ConfigFetcher is an interface for config-fetching / reading types
 type ConfigFetcher interface {
 	FetchConfig() (*Config, error)
 }
@@ -137,7 +137,7 @@ func (cfg *Config) GetMap() *map[string]interface{} {
 	return &configMap
 }
 
-//Get returns the interface{} value stored at a given key
+// Get returns the interface{} value stored at a given key
 func (cfg *Config) Get(key string) (interface{}, error) {
 
 	value, ok := ((*cfg)[key])
